@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD1EF4072006EFB2005463CC /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1EF4062006EFB2005463CC /* AddItemViewController.swift */; };
+		DDE5670C2007156400526136 /* itemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5670B2007156400526136 /* itemsTableViewController.swift */; };
 		DDF90F7A200477B4007F67CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF90F79200477B4007F67CE /* AppDelegate.swift */; };
 		DDF90F7F200477B4007F67CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDF90F7D200477B4007F67CE /* Main.storyboard */; };
 		DDF90F82200477B4007F67CE /* Collector.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DDF90F80200477B4007F67CE /* Collector.xcdatamodeld */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD1EF4062006EFB2005463CC /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		DDE5670B2007156400526136 /* itemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itemsTableViewController.swift; sourceTree = "<group>"; };
 		DDF90F76200477B4007F67CE /* Collector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Collector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDF90F79200477B4007F67CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDF90F7E200477B4007F67CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -55,6 +59,8 @@
 			isa = PBXGroup;
 			children = (
 				DDF90F79200477B4007F67CE /* AppDelegate.swift */,
+				DDE5670B2007156400526136 /* itemsTableViewController.swift */,
+				DD1EF4062006EFB2005463CC /* AddItemViewController.swift */,
 				DDF90F7D200477B4007F67CE /* Main.storyboard */,
 				DDF90F83200477B4007F67CE /* Assets.xcassets */,
 				DDF90F85200477B4007F67CE /* LaunchScreen.storyboard */,
@@ -138,6 +144,8 @@
 			files = (
 				DDF90F82200477B4007F67CE /* Collector.xcdatamodeld in Sources */,
 				DDF90F7A200477B4007F67CE /* AppDelegate.swift in Sources */,
+				DDE5670C2007156400526136 /* itemsTableViewController.swift in Sources */,
+				DD1EF4072006EFB2005463CC /* AddItemViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

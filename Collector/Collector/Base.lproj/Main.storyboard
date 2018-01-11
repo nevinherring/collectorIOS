@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,13 +14,13 @@
         <!--Collector-->
         <scene sceneID="EGK-M4-PB8">
             <objects>
-                <tableViewController id="cjL-dR-ElU" sceneMemberID="viewController">
+                <tableViewController id="cjL-dR-ElU" customClass="itemsTableViewController" customModule="Collector" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8hO-h9-tEC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="wLy-wq-zKp">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="wLy-wq-zKp">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wLy-wq-zKp" id="H9e-bj-B1e">
@@ -48,10 +47,10 @@
             </objects>
             <point key="canvasLocation" x="644" y="97"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Item View Controller-->
         <scene sceneID="5OW-fb-KcZ">
             <objects>
-                <viewController id="DyR-fd-Nrg" sceneMemberID="viewController">
+                <viewController id="DyR-fd-Nrg" customClass="AddItemViewController" customModule="Collector" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UZT-7F-B1E">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -68,12 +67,13 @@
                                 <rect key="frame" x="172" y="420" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addTapped:" destination="DyR-fd-Nrg" eventType="touchUpInside" id="4Sk-Z0-DWS"/>
+                                </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="photo-camera" translatesAutoresizingMaskIntoConstraints="NO" id="z4e-7Y-nh3">
-                                <rect key="frame" x="67" y="121" width="240" height="240"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="z4e-7Y-nh3" secondAttribute="height" multiplier="15:8" id="LRn-Ul-6HM"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photo-camera" translatesAutoresizingMaskIntoConstraints="NO" id="jBg-3t-87U">
+                                <rect key="frame" x="67" y="85" width="240" height="227"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -81,10 +81,23 @@
                     </view>
                     <navigationItem key="navigationItem" id="zXb-9B-dNg">
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="camera" id="t3a-SG-aDm"/>
-                            <barButtonItem systemItem="organize" id="5mr-Hy-fgX"/>
+                            <barButtonItem systemItem="camera" id="t3a-SG-aDm">
+                                <connections>
+                                    <action selector="cameraTapped:" destination="DyR-fd-Nrg" id="Bfv-y7-aqR"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="organize" id="5mr-Hy-fgX">
+                                <connections>
+                                    <action selector="photosTapped:" destination="DyR-fd-Nrg" id="Sxc-1X-CPX"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addTapped" destination="hk5-EJ-15r" id="Vpn-im-wOS"/>
+                        <outlet property="itemImageView" destination="jBg-3t-87U" id="j7O-Wf-4T6"/>
+                        <outlet property="titleTextField" destination="h2d-um-QRd" id="Hac-sm-IEa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ti8-Xs-coV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
